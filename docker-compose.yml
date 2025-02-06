@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: nginx_server
+    volumes:
+      - ./build:/usr/share/nginx/html:ro
+    ports:
+      - "8000:80"
+    restart: unless-stopped
